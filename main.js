@@ -72,7 +72,7 @@ async function carregarArquivos() {
 	// Lista de músicas
 	const musicasDados = await fetch('lista.txt')
 	const musicasTexto = await musicasDados.text()
-	listaDeMusicas = musicasTexto.split('\r\n')
+	listaDeMusicas = musicasTexto.split('\n')
 
 	// Fim do carregamento
 	telaInicial()
@@ -274,7 +274,7 @@ async function carregarMusica(nomeMusica) {
 	const dadosNotas = await fetch(`musicas/${nomeMusica}/notas.txt`)
 	const textoNotas = await dadosNotas.text()
 	notas = textoNotas
-	.split('\r\n')
+	.split('\n')
 	.filter(nota => nota)
 	.map(nota => new Nota(...nota.split(',').map(valor => Number(valor))))
 	.sort((nota1,nota2) => nota1.tempo - nota2.tempo)
