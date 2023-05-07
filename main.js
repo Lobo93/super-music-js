@@ -302,9 +302,9 @@ canvasPista.height = alturaPista
 
 function telaJogo() {
 	botoesNota.classList.remove('inativo')
-	multiplicador = 1
-	notasSeguidas = 0
 	pontos = 0
+	notasSeguidas = 0
+	atualizarMultiplicador()
 	tela = 'jogo'
 	carregarMusica(listaDeMusicas[musicaEscolhida])
 }
