@@ -1,0 +1,118 @@
+:root {
+	height: 100%;
+}
+
+* {
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+body {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: sans-serif;
+	margin: 0;
+	background-color: #111;
+}
+
+.container {
+	position: relative;
+	aspect-ratio: 1/1;
+	overflow: hidden;
+}
+
+@media (orientation:landscape) {
+	.container {
+		height: 100%;
+	}
+}
+
+@media (orientation:portrait) {
+	.container {
+		width: 100%;
+	}
+}
+
+select {
+	position: absolute;
+	width: 70%;
+	left: 15%;
+	top: 50%;
+	padding: 10px 0;
+	transform: translateY(-50%);
+	background: linear-gradient(to right, #0000, #0008, #0000);
+	border: none;
+	outline: none;
+	color: #eee;
+	text-align: center;
+	font-size: 40px;
+}
+
+select::-webkit-scrollbar {
+	width: 16px;
+}
+
+select::-webkit-scrollbar-thumb {
+	background-color: #0008;
+}
+
+select::-webkit-scrollbar-corner {
+	background-color: transparent;
+}
+
+select::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+canvas {
+	width: 100%;
+	image-rendering: pixelated;
+	background-color: #eee1;
+}
+
+.botoes-nota {
+	position: absolute;
+	display: flex;
+	bottom: 0;
+	height: 30%;
+	width: 100%;
+	padding: 0 12%;
+	box-sizing: border-box;
+}
+
+.botoes-musica {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	left: 10%;
+	bottom: 13%;
+	width: 80%;
+	height: 37%;
+}
+
+.botao {
+	width: 100%;
+	height: 100%;
+}
+
+.botao-selecao {
+	width: 25%;
+}
+
+.botao-voltar {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 35%;
+	height: 14%;
+}
+
+.inativo {
+	display: none;
+}
