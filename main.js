@@ -8,7 +8,6 @@ let opacidadeTelaPreta = 1
 let tempoAnterior = 0
 let tempoDelta = 0
 let tempoMusica = 0
-let tocando = false
 let posicaoPista = 0
 let velocidadePista = 200
 let larguraPista = 200
@@ -184,7 +183,7 @@ botaoMusicaAnterior.addEventListener('click', musicaAnterior)
 function escolherMusica() {
 	if (botoesMusica.classList.contains('inativo')) return
 	botoesMusica.classList.add('inativo')
-	musica.pause()
+	musica.src = ''
 	telaPreta = true
 	setTimeout(telaJogo, 1000)
 }
@@ -291,7 +290,6 @@ async function carregarMusica(nomeMusica) {
 	musica.src = audio
 	musica.volume = 0.5
 	musica.play()
-	tocando = true
 }
 
 // Tela do jogo
@@ -451,6 +449,7 @@ function erro() {
 }
 musica.addEventListener('ended', () => {
 	if (tela !== 'jogo') return
+	musica.src = ''
 	botoesNota.classList.add('inativo')
 	telaPreta = true
 	porcentagem = Math.floor(notas.filter(nota => nota.tocada).length / notas.length * 100)
